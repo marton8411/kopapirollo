@@ -26,21 +26,127 @@ public class KoPapirOlloGui extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        buttonGroup1 = new javax.swing.ButtonGroup();
         jPanel1 = new javax.swing.JPanel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        txtAreaResult = new javax.swing.JTextArea();
+        jLabel1 = new javax.swing.JLabel();
+        btnRestart = new javax.swing.JButton();
+        btnClose = new javax.swing.JButton();
+        radioKo = new javax.swing.JRadioButton();
+        jLabel2 = new javax.swing.JLabel();
+        radioPapir = new javax.swing.JRadioButton();
+        radioOllo = new javax.swing.JRadioButton();
+        btnStart = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder("Kő-Papír-Olló játék"));
 
+        txtAreaResult.setColumns(20);
+        txtAreaResult.setRows(5);
+        jScrollPane1.setViewportView(txtAreaResult);
+
+        jLabel1.setText("Eredmény:");
+
+        btnRestart.setText("Újra");
+        btnRestart.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnRestartActionPerformed(evt);
+            }
+        });
+
+        btnClose.setText("Bezárás");
+
+        buttonGroup1.add(radioKo);
+        radioKo.setText("Kő");
+        radioKo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                radioKoActionPerformed(evt);
+            }
+        });
+
+        jLabel2.setText("Mi a választásod?");
+
+        buttonGroup1.add(radioPapir);
+        radioPapir.setText("Papír");
+        radioPapir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                radioPapirActionPerformed(evt);
+            }
+        });
+
+        buttonGroup1.add(radioOllo);
+        radioOllo.setText("Olló");
+        radioOllo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                radioOlloActionPerformed(evt);
+            }
+        });
+
+        btnStart.setText("Start");
+        btnStart.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnStartActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 486, Short.MAX_VALUE)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(66, 66, 66)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel1)
+                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGap(32, 32, 32)
+                                .addComponent(radioKo)
+                                .addGap(18, 18, 18)
+                                .addComponent(radioPapir)
+                                .addGap(18, 18, 18)
+                                .addComponent(radioOllo)))
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(11, 11, 11)
+                        .addComponent(btnRestart)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 69, Short.MAX_VALUE)
+                        .addComponent(btnClose)
+                        .addGap(76, 76, 76))))
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(131, 131, 131)
+                        .addComponent(jLabel2))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(139, 139, 139)
+                        .addComponent(btnStart)))
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 307, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addGap(11, 11, 11)
+                .addComponent(jLabel2)
+                .addGap(17, 17, 17)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(radioKo)
+                    .addComponent(radioPapir)
+                    .addComponent(radioOllo))
+                .addGap(18, 18, 18)
+                .addComponent(btnStart)
+                .addGap(12, 12, 12)
+                .addComponent(jLabel1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnRestart)
+                    .addComponent(btnClose))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -62,6 +168,26 @@ public class KoPapirOlloGui extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btnRestartActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRestartActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnRestartActionPerformed
+
+    private void radioKoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_radioKoActionPerformed
+       
+    }//GEN-LAST:event_radioKoActionPerformed
+
+    private void radioPapirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_radioPapirActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_radioPapirActionPerformed
+
+    private void radioOlloActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_radioOlloActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_radioOlloActionPerformed
+
+    private void btnStartActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnStartActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnStartActionPerformed
 
     /**
      * @param args the command line arguments
@@ -99,6 +225,17 @@ public class KoPapirOlloGui extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnClose;
+    private javax.swing.JButton btnRestart;
+    private javax.swing.JButton btnStart;
+    private javax.swing.ButtonGroup buttonGroup1;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JRadioButton radioKo;
+    private javax.swing.JRadioButton radioOllo;
+    private javax.swing.JRadioButton radioPapir;
+    private javax.swing.JTextArea txtAreaResult;
     // End of variables declaration//GEN-END:variables
 }
